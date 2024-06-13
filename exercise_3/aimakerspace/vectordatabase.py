@@ -1,8 +1,14 @@
+import sys
+sys.path.append("/Users/waseem/code/AIM3/aim_exercises/exercise_3")
+
 import numpy as np
 from collections import defaultdict
 from typing import List, Tuple, Callable
 from aimakerspace.openai_utils.embedding import EmbeddingModel
 import asyncio
+
+
+
 
 
 def cosine_similarity(vector_a: np.array, vector_b: np.array) -> float:
@@ -73,7 +79,7 @@ if __name__ == "__main__":
     retrieved_vector = vector_db.retrieve_from_key(
         "I like to eat broccoli and bananas."
     )
-    print("Retrieved vector:", retrieved_vector)
+    print("Retrieved vector:", retrieved_vector, type(retrieved_vector), retrieved_vector.size)
 
     relevant_texts = vector_db.search_by_text(
         "I think fruit is awesome!", k=k, return_as_text=True
